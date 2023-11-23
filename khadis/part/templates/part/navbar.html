@@ -1,0 +1,406 @@
+{%load static%}
+<style>
+    /* Define colors */
+    :root {
+        --primary-color: #ffffff; /* white */
+        --secondary-color: #f1f1f1; /* light gray */
+        --accent-color: #555555; /* dark gray */
+        --text-color: #333333; /* dark text */
+        --gold-color: #ffd700; /* gold */
+    }
+
+    /* Basic reset for styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        overflow-x: hidden;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #F5F6F7;
+    }
+
+    /* Header styles */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+
+        background-color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        padding: 1em 1em;
+        justify-content: space-around;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+    }
+    form{
+            align-self: center;
+        }
+
+    header div a{
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        color: #75A1A1;
+        display: flex;
+    }
+
+    /* Navbar styles */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 64px;
+        margin-right: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+
+    nav li {
+        margin-right: 1em;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    main{
+        margin-top: 200px;
+        width: 100%;
+    }
+
+    /* Call to action styles */
+    .cta-button {
+        width: 150px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .cta-button:hover {
+        background-color: #333;
+        color: var(--primary-color);
+    }
+
+    .search-container{
+
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+    }
+    .search-input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 200px;
+            border-radius: 5px;
+            margin-right: 1em;
+            font-size: 1em;
+        }
+
+    .search-icon {
+        background-color: var(--accent-color);
+        padding: 0.5em;
+        border: none;
+        border-radius: 5px;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+    .links {
+        margin: 5px 10px;
+        display: flex;
+    }
+    .links a{
+        text-decoration: none;
+        color: #75A1A1;
+        font-size: 12px;
+    }
+
+    main section{
+        padding: 1em 2em;
+        border-radius: 0.2rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 20px 30px;
+
+    }
+
+    section div{
+        display: flex;
+        gap: 100px;
+        margin-bottom: 15px;
+    }
+
+    .bio{
+        color: #555555;
+        font-size: 13px;
+    }
+    .latin{
+        font-size: 32px;
+    }
+
+    main section a{
+        font-size: 10px;
+        text-decoration: none;
+        color: #75A1A1;
+    }
+
+    .white{
+        padding: 10px;
+        margin: 0 2em;
+        border-top-right-radius: 0.2rem;
+        border-top-left-radius: 0.2rem;
+        border: 1px ;
+        background-color:#f9f8f0 ;
+    }
+    .white a {
+
+        display: flex;
+        justify-content: space-around;
+        text-decoration: none;
+    }
+
+    .white a:active ~ .white{
+        background-color: white;
+    }
+    .white a p{
+        flex: 1;
+
+        color:#75A1A1 ;
+        text-align: center;
+
+    }
+    .wheat{
+        padding: 10px;
+        margin: 0 2em;
+        border-top-right-radius: 0.2rem;
+        border-top-left-radius: 0.2rem;
+        border: 1px ;
+        background-color: #f9f8f0;
+    }
+    .wheat a {
+
+        display: flex;
+        justify-content: space-around;
+        text-decoration: none;
+    }
+    .wheat a p{
+        flex: 1;
+        color:#75A1A1 ;
+    }
+
+    p.latin{
+        font-size: 32px;
+    }
+
+    div.beta{
+
+        display: flex;
+        height: 24px;
+        width: 200px;
+        background-color: white;
+    }
+
+    div.beta img{
+       width: 24px;
+       margin: 0;
+    }
+    div.beta button{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        height: 24px;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    div.beta input {
+        border: none;
+        outline: none;
+
+        padding: 0.5em 1em;
+        width: 200px;
+        font-size: 1em;
+        }
+    
+
+
+
+
+
+
+
+    /* Your existing styles go here */
+
+    @media only screen and (max-width: 768px) {
+        /* Adjustments for tablets and smaller screens */
+        header {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header div.beta {
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        nav{
+            padding-left: 15px;
+        }
+
+        nav ul {
+            gap: 30px;
+            padding-left: 18px;
+
+            text-align: center;
+        }
+
+
+        .search-container {
+            justify-content: center;
+        }
+
+        main section {
+            padding: 1em;
+            margin: 10px;
+        }
+
+        .white, .wheat {
+            margin: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        /* Adjustments for mobile devices */
+        header {
+            padding: 0.5em;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        header div.beta{
+            margin-right: 30px;
+        }
+        
+
+        nav ul {
+            padding-left: 8px;
+
+            text-align: center;
+        }
+
+        nav li {
+            margin: 5px 0;
+        }
+
+        .search-input {
+            width: 100%;
+            margin-right: 0;
+        }
+        p{
+            font-size: 14px;
+        }
+
+        main section {
+            padding: 0.5em;
+        }
+
+        .white, .wheat {
+            margin: 5px;
+        }
+    }
+
+
+    
+
+
+</style>
+
+<body>
+    <header>
+        <div>
+            <a href="{%url 'home'%}">
+                <img src="{%static 'logo.jpeg'%}" alt="Logo"/>
+                <h2>Hadis.uz</h2>
+            </a>
+        </div>
+
+
+
+        <form action="{%url 'search'%}" method="post"> 
+            {%csrf_token%}
+            <div class="beta">
+                <input type="text" name="savol" placeholder="Qidiring...">
+                <button><img src="{%static 'glass.png'%}" alt=""></button>
+            </div>
+        </form>
+
+
+        <nav>
+            <ul>
+                <li><a href="https://islom.uz/" target="_blank">Islom uz</a></li>
+                <li><a href="https://savollar.islom.uz/" target="_blank">Savollar</a></li>
+                <li><a href="https://www.ziyouz.com/kutubxona/category/18-islomiy-kitoblar" target="_blank">Ilm Ahli</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <section>
+            {%if the_book%}
+                <div>
+                    <p class="p.latin">{{the_book.lotin}}</p>
+
+                    <p class="p.arab">{{the_book.arab}}</p>
+                </div>
+                <p class="bio">{{the_book.haqida}}</p>
+                <a href="">More </a>
+            {%endif%}
+        </section>
+    </main>
+
+    <article>
+        {%for chapter in chapters%}
+            <div class="white">
+                <form action="" method="POST">
+                    <a href="{%url 'parcha' chapter.lotin%}">
+                        <p class="id">{{chapter.id}}</p>
+                        <p class="name">{{chapter.lotin}}</p>
+                        <p class="arabic">{{chapter.arab}}</p>
+                        <p class="from">{{chapter.dan}}</p>
+                        <p class="dan">-</p>
+                        <p class="gacha">{{chapter.gacha}}</p>
+                    </a>
+                </form>
+            </div>
+        {%endfor%}
+    </article>
+
+</body>

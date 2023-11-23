@@ -1,0 +1,432 @@
+{%load static%}
+
+{%load books%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+    :root {
+        --primary-color: #ffffff; /* white */
+        --secondary-color: #f1f1f1; /* light gray */
+        --accent-color: #555555; /* dark gray */
+        --text-color: #333333; /* dark text */
+        --gold-color: #ffd700; /* gold */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #F5F6F7;
+    }
+
+    /* Header styles */
+    header {
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+
+        background-color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        padding: 1em 1em;
+        justify-content: space-around;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+    }
+
+    header div{
+        display: flex;
+        align-items: center;
+    }
+
+    header div a{
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        color: #75A1A1;
+        display: flex;
+    }
+
+    .beta form{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Navbar styles */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 64px;
+        margin-right: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+
+    nav li {
+        margin-right: 1em;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+    form{
+        align-self: center;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    /* Call to action styles */
+    .cta-button {
+        width: 150px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .cta-button:hover {
+        background-color: #333;
+        color: var(--primary-color);
+    }
+
+    .search-container{
+
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+    }
+    .search-input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 200px;
+            border-radius: 5px;
+            margin-right: 1em;
+            font-size: 1em;
+        }
+
+    .search-icon {
+        background-color: var(--accent-color);
+        padding: 0.5em;
+        border: none;
+        border-radius: 5px;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    h2 {
+        font-weight: normal;
+    }
+
+    h2 span{
+        color: green;
+    }
+
+
+
+    article {
+        overflow-x: hidden;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        justify-self: center;
+    }
+    h2.result {
+        align-self: center;
+            margin-top: 100px;
+            }
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+        background-color: #F5F6F7;
+        font-family: "Akzidenz Roman", Helvetica, Arial, sans-serif;
+        color: black;
+        font-size: 14px;
+    }
+
+    .add{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        color: #75A1A1;
+    }
+
+
+        p.narrated {
+            color: #75A1A1;
+        }
+
+        .meta a{
+            display: flex;
+            align-items: center;
+        }
+
+        .bio-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bio-text {
+            border-radius: 0.2rem;
+            background-color: white;
+            flex: 1;
+            padding: 5%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+
+
+
+        .soz{
+            width: 96%;
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+        }
+        .latin{
+            flex:1;
+        }
+        .arabic{
+            flex: 1;
+        }
+        .add{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        div.beta{
+            margin-right: 10px;
+            display: flex;
+            height: 34px;
+            width: 200px;
+        }
+
+        div.beta img{
+            width: 30px;
+            margin: 0;
+        }
+        div.beta button{
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            height: 30px;
+            cursor: pointer;
+            border-radius: 0.2rem;
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+        .highlight{
+            background-color: wheat;
+        }
+
+        div.beta input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 200px;
+            font-size: 1em;
+            }
+        article::-webkit-scrollbar{
+            display: none;
+            scrollbar-width: none;
+
+        }
+
+        .pagination{
+            align-self: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav{
+                padding-left: 30px;
+            }
+
+            article{
+                margin-top: 100px;
+            }
+
+            article::-webkit-scrollbar{
+                display: none;
+                scrollbar-width: none;
+            }
+            header {
+            gap: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+
+            .bio-text {
+                max-width: 100%;
+            }
+
+
+        }
+        .bio-container{
+                width: 90%;
+
+                margin:5px 5%;
+            }
+
+        @media only screen and (max-width: 480px) {
+
+            .bio-container{
+                width: 90%;
+                margin:5px 5%;
+            }
+            article{
+                margin-top: 150px;
+            }
+            article::-webkit-scrollbar{
+                display: none;
+                scrollbar-width: none;
+
+            }
+            header {
+            gap: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="meta">
+            <a href="{%url 'home'%}">
+                <img src="{%static 'logo.jpeg'%}" alt="Logo"/>
+                <h2>Hadis.uz</h2>
+            </a>
+        </div>
+        <form action="{%url 'search'%}" method="post"> 
+            {%csrf_token%}
+            <div class="beta">
+                <input type="text" name="savol" placeholder="Qidiring...">
+                <button><img src="{%static 'glass.png'%}" alt=""></button>
+            </div>
+        </form>
+
+
+
+        <nav>
+            <ul>
+                <li><a href="https://islom.uz/" target="_blank">Islom uz</a></li>
+                <li><a href="https://savollar.islom.uz/" target="_blank">Savollar</a></li>
+                <li><a href="https://www.ziyouz.com/kutubxona/category/18-islomiy-kitoblar" target="_blank">Islomiy Kutubxona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <h2 class="result">
+            <span>{{number}}</span> ta hadis topildi
+        </h2>
+
+        {%for content in books%} 
+            <div class="bio-container">
+                <div class="bio-text">
+                    <p class="narrated">{{content.tomonidan|highlight_yellow:keyword}}</p>
+                    <div class="soz">
+                        <div class="latin">
+                            <p class="text">{{content.lotin|highlight_yellow:keyword}}</p>
+                        </div>
+
+                        <div class="arabic">
+                            <p class="ara">{{content.arab}}</p>
+                        </div>
+                    </div>
+
+                    <div class="add">
+                        <p class="bet">Kitobdagi sarlavhasi : {{content.kitobda}}</p>
+                        <p class="type">Hadis turi :{{content.toifa|highlight_yellow:keyword}}</p>
+                    </div>
+                </div>
+            </div>
+        {%endfor%}
+
+
+    </article>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if books.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ books.number }} of {{ books.paginator.num_pages }}.
+            </span>
+
+            {% if books.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+</body>
+
+</html>

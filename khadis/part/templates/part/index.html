@@ -1,0 +1,375 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempting Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        /* Define colors */
+        :root {
+            --primary-color: #ffffff; /* white */
+            --secondary-color: #f1f1f1; /* light gray */
+            --accent-color: #555555; /* dark gray */
+            --text-color: #333333; /* dark text */
+            --gold-color: #ffd700; /* gold */
+        }
+
+        /* Basic reset for styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #F5F6F7;
+        }
+
+        /* Header styles */
+        header {
+            padding: 20px;
+            min-width: 60%;
+            align-self: center;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        header div a{
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            color: #75A1A1;
+            display: flex;
+        }
+
+        /* Navbar styles */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 64px;
+            margin-right: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 1em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        form{
+            align-self: center;
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        /* Call to action styles */
+        .cta-button {
+            width: 150px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+            color: var(--primary-color);
+        }
+
+        .search-container{
+
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        /* Saying styles */
+        .saying {
+            text-align: center;
+            color: #75A1A1;
+            padding: 1em 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .search-input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 40%;
+            border-radius: 5px;
+            margin-right: 1em;
+            font-size: 1em;
+        }
+
+        .search-icon {
+            background-color: var(--accent-color);
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        section{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            
+        }
+
+        .left {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .right {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .left div , .right div{
+            width: 350px;
+        }
+
+    
+
+
+
+        a.a{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 35px;
+            background-color: var(--primary-color);
+            border-radius: 0.2rem;
+            width: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .latin{
+            color: #75A1A1;
+            width: 50%;
+            text-align: right;
+        }
+        .arabic{
+            color: #75A1A1;
+
+            width: 50%;
+            text-align: left;
+        }
+
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            background-color: var(--secondary-color);
+            justify-content: center;
+        }
+
+        footer p{
+            color: white;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer p a {
+            margin-right: 5px;
+            margin-left: 5px;
+            color:#75A1A1;
+            text-decoration: none;
+        }
+
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        div.beta{
+            align-self: center;
+            display: flex;
+            height: 34px;
+            width: 200px;
+            background-color: red;
+        }
+
+        div.beta img{
+            width: 34px;
+            margin: 0;
+        }
+        div.beta button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            cursor: pointer;
+            border-radius: 0.2rem;
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+
+        div.beta input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 200px;
+            font-size: 1em;
+        }
+
+        .blue a{
+            font-weight: 500;
+        }
+
+
+        /* Original styles above this line */
+
+    @media only screen and (max-width: 768px) {
+        /* Styles for screens up to 768px width */
+
+        header {
+            gap: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        /* Styles for screens up to 400px width */
+
+        header {
+            gap: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    /* Original styles below this line */
+
+    
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div>
+            <a href="{%url 'home'%}">
+                <img src="{%static 'logo.jpeg'%}" alt="Logo"/>
+                <h2>Hadis.uz</h2>
+            </a>
+        </div>
+
+
+        
+
+        <nav>
+            <ul>
+                <li class="blue"><a href="https://islom.uz/" target="_blank">Islom.uz</a></li>
+                <li class="blue"><a href="https://savollar.islom.uz/" target="_blank">Zikr Ahli</a></li>
+                <li class="blue"><a href="https://www.ziyouz.com/kutubxona" target="_blank">Ziyo.uz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Saying -->
+        <div class="saying">
+            "Discover the Art of Temptation and Elegance"
+        </div>
+
+        <form action="{%url 'search'%}" method="POST">
+
+            <div class="beta">
+                    {%csrf_token%}
+                    <input type="text" name="savol" placeholder="Hadisni qidiring...">
+                    <button><img src="{%static 'glass.png'%}" alt=""></button>
+
+            </div>
+        </form>
+
+        <section>
+                <div class="left">
+                    {%for kitob in kitoblar%}
+                        <div>
+                            <form action="" method="POST">
+
+                                    <a href="{%url 'chapter' kitob.lotin %}"  class="a">
+                                        <p class="latin">{{kitob.lotin}}</p>
+                                        <p class="arabic">{{kitob.arab}}</p>
+                                    </a>
+                            </form>
+                        </div>
+                    {%endfor%}
+                </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>
+            <a href=""> About </a> |
+            <a href=""> Contact </a> |
+            <a href="https://t.me/islomuz"> Telegram</a>
+        </p>
+    </footer>
+
+    <!-- Your main content goes here -->
+
+</body>
+</html>

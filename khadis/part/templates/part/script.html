@@ -1,0 +1,482 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+    :root {
+        --primary-color: #ffffff; /* white */
+        --secondary-color: #f1f1f1; /* light gray */
+        --accent-color: #555555; /* dark gray */
+        --text-color: #333333; /* dark text */
+        --gold-color: #ffd700; /* gold */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #F5F6F7;
+    }
+    .bio-container{
+                margin-bottom: 10px;
+                margin-top: 0;
+            }
+
+    /* Header styles */
+    header {
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+
+        background-color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        padding: 1em 1em;
+        justify-content: space-around;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+    }
+
+    header div{
+        display: flex;
+        align-items: center;
+    }
+
+    header div a{
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        color: #75A1A1;
+        display: flex;
+    }
+
+    /* Navbar styles */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 64px;
+        margin-right: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+
+    nav li {
+        margin-right: 1em;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    /* Call to action styles */
+    .cta-button {
+        width: 150px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .cta-button:hover {
+        background-color: #333;
+        color: var(--primary-color);
+    }
+
+    .search-container{
+
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+    }
+    .search-input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 200px;
+            border-radius: 5px;
+            margin-right: 1em;
+            font-size: 1em;
+        }
+
+    .search-icon {
+        background-color: var(--accent-color);
+        padding: 0.5em;
+        border: none;
+        border-radius: 5px;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    h2.h2{
+
+        margin-top: 70px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    article {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        justify-self: center;
+    }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #F5F6F7;
+            font-family: "Akzidenz Roman", Helvetica, Arial, sans-serif;
+            color: black;
+            font-size: 14px;
+        }
+
+
+        p.narrated {
+            color: #75A1A1;
+        }
+
+        .bio-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .soz{
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+        }
+
+        .latin{
+            max-width: 50%;
+        }
+        form{
+            align-self: center;
+        }
+
+        .bio-text {
+            border-radius: 0.2rem;
+            background-color: white;
+            flex: 1;
+            padding: 10px;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+
+        a.copy-all {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-decoration: none;
+            color: #75A1A1;
+        }
+
+        .bio-image {
+            margin-top: 1em;
+            padding: 1em;
+            width: 32px;
+            border-radius: 50%;
+        }
+
+        .chapter {
+            align-self: center;
+            padding: 20px;
+            width: 50%;
+            opacity: 0.6;
+            background-color: white;
+            border-radius: 0.3rem;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .chapter .arabic{
+            margin-left: 20px;
+        }
+
+        .chapter .latin{
+            margin-right: 20px;
+
+        }
+
+        div.beta{
+            margin-right: 10px;
+            display: flex;
+            height: 34px;
+            width: 200px;
+        }
+
+        div.beta form{
+            display: flex;
+        }
+
+
+
+        div.beta img{
+            width: 30px;
+            margin: 0;
+        }
+        div.beta button{
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            height: 30px;
+            cursor: pointer;
+            border-radius: 0.2rem;
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+
+        .add{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            color: #75A1A1 ;
+            gap: 5px;
+        }
+
+        div.beta input {
+            border: none;
+            outline: none;
+
+            padding: 0.5em 1em;
+            width: 250px;
+            font-size: 1em;
+            }
+        article::-webkit-scrollbar{
+            display: none;
+            scrollbar-width: none;
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            .beta{
+                background-color: white;
+            }
+            div.beta input{
+                width: 170px;
+            }
+            .bio-container{
+                margin-bottom: 0px;
+                margin-top: 0;
+            }
+            div.beta{
+                margin-right: 10px;
+            }
+            .bio-text{
+                margin: 10px;
+            }
+            article{
+                margin-top: 50px;
+            }
+            .bio-text{
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+            article::-webkit-scrollbar{
+                display: none;
+                scrollbar-width: none;
+            }
+            header {
+                padding: 5px;
+            gap: 10px;
+            width: 100%;
+            display: flex;
+        }
+            h2.h2 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chapter {
+                margin: 20px 0;
+            }
+
+
+
+            .bio-text {
+                max-width: 100%;
+            }
+
+            a.copy-all {
+                bottom: 0%;
+                left: 90%;
+                transform: translateX(-90%);
+            }
+        }
+        .chapter{
+                width: 80%;
+            }
+
+        @media only screen and (max-width: 480px) {
+            div.beta input{
+                width: 170px;
+            }
+            .bio-container{
+                margin-top: 0;
+            }
+            .bio-text{
+                margin: 10px;
+            }
+            .chapter{
+                width: 80%;
+            }
+            article{
+                margin-top: 150px;
+            }
+            article::-webkit-scrollbar{
+                display: none;
+                scrollbar-width: none;
+
+            }
+            header {
+            gap: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bio-text{
+            padding-left: 20px;
+        }
+        .bio-image {
+            margin-top: 0.5em;
+        }
+        .chapter .arabic , .latin{
+            margin: 0;
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="meta">
+            <a href="{%url 'home'%}">
+                <img src="{%static 'logo.jpeg'%}" alt="Logo"/>
+                <h2>Hadis.uz</h2>
+            </a>
+        </div>
+
+        <form action="{%url 'search'%}" method="post"> 
+            {%csrf_token%}
+            <div class="beta">
+                <input type="text" name="savol" placeholder="Qidiring...">
+                <button><img src="{%static 'glass.png'%}" alt=""></button>
+            </div>
+        </form>
+
+
+
+        <nav>
+            <ul>
+                <li><a href="https://islom.uz/" target="_blank">Islom uz</a></li>
+                <li><a href="https://savollar.islom.uz/" target="_blank">Savollar</a></li>
+                <li><a href="https://www.ziyouz.com/kutubxona/category/18-islomiy-kitoblar" target="_blank">Ilm Ahli</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        {%if the_chapter%}
+        <h2 class="h2">
+            <p class="latin">({{the_chapter.id}}){{the_chapter.lotin}}</p>
+            <p class="arab">({{the_chapter.id}}){{the_chapter.arab}}</p>
+        </h2>
+            {%if parts%}
+        
+                {%for part in parts%}      
+                    <div class="chapter">
+                        <p class="latin">{{part.lotin}}</p>
+                        <p class="arabic">{{part.arab}}</p>
+                    </div>
+                    {%if xadislar%}
+                        {%for xadis in xadislar%}
+                            {%for x in xadis%}
+                                <div class="bio-container">
+                                    
+                                    <div class="bio-text">
+                                        <p class="narrated">{{x.tomonidan}} tomonidan:</p>
+                                        <div class="soz">
+                                            <div class="latin">
+                                                <p class="text">{{x.lotin}}</p>
+                                            </div>
+
+                                            <div class="arabic">
+                                                <p>{{x.arab}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="add">
+                                            <p class="bet">Kitobdagi sarlavhasi {{x.kitobda}}:</p>
+                                            <p class="type">Hadis turi : {{x.toifa}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            {%endfor%}
+                        {%endfor%}
+                    {%endif%}
+                {%endfor%}
+            {%endif%}
+        {%endif%}
+
+    </article>
+
+</body>
+
+</html>
